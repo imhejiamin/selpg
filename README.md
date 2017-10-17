@@ -66,3 +66,85 @@ $ selpg -s10 -e20 input_file > output_file 2>error_file &
 
 ## 实验结果与测试
 ### 实验前
+测试前项目下包含的文件内容，test.txt为测试使用的输入文件，selpg.go为go源代码，selpg.go为编译出来的go的可执行程序。
+
+![-1](https://github.com/imhejiamin/selpg/blob/master/my_images/-1.png)
+
+下面是c源代码提供给用户的的usage（）函数
+
+![-2](https://github.com/imhejiamin/selpg/blob/master/my_images/-2.png)
+
+这是go语言下提供给用户的usage（）函数参考
+
+![-3](https://github.com/imhejiamin/selpg/blob/master/my_images/-3.png)
+
+作为input file 的 test.txt文件，一共100行，每行一个数字，一共是1-100.
+
+![-4](https://github.com/imhejiamin/selpg/blob/master/my_images/-4.png)
+
+### 1、selpg -s 1 -e 1 test.txt
+因为是没有传l参数，就默认l页长度为72行，所以第一页打印到第一页结束，共一页，即72行。
+
+![1](https://github.com/imhejiamin/selpg/blob/master/my_images/1.png)
+
+### 2、selpg -s 1 -e 1 < test.txt
+< 符号selpg 读取标准输入，而标准输入已被 shell／内核重定向为来自“input_file”而不是显式命名的文件名参数。输入的第 1 页被写至屏幕。与1输出相同。
+
+![2](https://github.com/imhejiamin/selpg/blob/master/my_images/2.png)
+
+### 3、type test.txt | selpg -s 1 -e 1
+也是跟1输出相同，“type test.txt”的标准输出被 shell／内核重定向至 selpg 的标准输入。将第 10 页到第 20 页写至 selpg 的标准输出。
+
+![3](https://github.com/imhejiamin/selpg/blob/master/my_images/3.png)
+
+### 4、selpg -s 10 -e 20 -l 1 test.txt > out.txt
+> 符号将输出重定向到out.txt文件。
+![4](https://github.com/imhejiamin/selpg/blob/master/my_images/4.png)
+会发现project下面多了一个新文件，out.txt。
+![4-2](https://github.com/imhejiamin/selpg/blob/master/my_images/4-2.png)
+打开out.txt，就是输出的内容。
+![4-3](https://github.com/imhejiamin/selpg/blob/master/my_images/4-3.png)
+
+### 5、selpg -s 10 -e 20 test.txt 2>error.txt
+这个命令实现将前面的命令执行的错误结果重定向输出到error.txt文件中。
+![5](https://github.com/imhejiamin/selpg/blob/master/my_images/5.png)
+会发现project下面多了一个新文件，error.txt。
+![5-2](https://github.com/imhejiamin/selpg/blob/master/my_images/5-2.png)
+打开文件，出现报错，因为输入文件太短，该命令需要读取11页的数据（每一页初始默认72行）。
+![5-3](https://github.com/imhejiamin/selpg/blob/master/my_images/5-3.png)
+
+### 6、selpg -s 10 -e 20 test.txt >out.txt 2>error.txt
+两次重定向输出，屏幕无输出，out.txt没有内容，error.txt有存储错误信息。
+![6](https://github.com/imhejiamin/selpg/blob/master/my_images/6.png)
+
+![6-2](https://github.com/imhejiamin/selpg/blob/master/my_images/6-2.png)
+
+### 7、
+
+![7](https://github.com/imhejiamin/selpg/blob/master/my_images/7.png)
+
+### 8、
+
+![8](https://github.com/imhejiamin/selpg/blob/master/my_images/8.png)
+
+### 9、
+
+![9](https://github.com/imhejiamin/selpg/blob/master/my_images/9.png)
+
+![9-2](https://github.com/imhejiamin/selpg/blob/master/my_images/9-2.png)
+
+### 10、
+
+![10](https://github.com/imhejiamin/selpg/blob/master/my_images/10.png)
+
+![10-2](https://github.com/imhejiamin/selpg/blob/master/my_images/10-2.png)
+
+![10-3](https://github.com/imhejiamin/selpg/blob/master/my_images/10-3.png)
+
+### 11、
+
+![11](https://github.com/imhejiamin/selpg/blob/master/my_images/11.png)
+
+### 12、
+
+![12](https://github.com/imhejiamin/selpg/blob/master/my_images/12.png)
