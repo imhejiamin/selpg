@@ -99,36 +99,50 @@ $ selpg -s10 -e20 input_file > output_file 2>error_file &
 
 ### 4、selpg -s 10 -e 20 -l 1 test.txt > out.txt
 > 符号将输出重定向到out.txt文件。
+
 ![4](https://github.com/imhejiamin/selpg/blob/master/my_images/4.png)
+
 会发现project下面多了一个新文件，out.txt。
+
 ![4-2](https://github.com/imhejiamin/selpg/blob/master/my_images/4-2.png)
+
 打开out.txt，就是输出的内容。
+
 ![4-3](https://github.com/imhejiamin/selpg/blob/master/my_images/4-3.png)
 
 ### 5、selpg -s 10 -e 20 test.txt 2>error.txt
 这个命令实现将前面的命令执行的错误结果重定向输出到error.txt文件中。
+
 ![5](https://github.com/imhejiamin/selpg/blob/master/my_images/5.png)
+
 会发现project下面多了一个新文件，error.txt。
+
 ![5-2](https://github.com/imhejiamin/selpg/blob/master/my_images/5-2.png)
+
 打开文件，出现报错，因为输入文件太短，该命令需要读取11页的数据（每一页初始默认72行）。
+
 ![5-3](https://github.com/imhejiamin/selpg/blob/master/my_images/5-3.png)
 
 ### 6、selpg -s 10 -e 20 test.txt >out.txt 2>error.txt
 两次重定向输出，屏幕无输出，out.txt没有内容，error.txt有存储错误信息。
+
 ![6](https://github.com/imhejiamin/selpg/blob/master/my_images/66.png)
 
 ![6-2](https://github.com/imhejiamin/selpg/blob/master/my_images/6-2.png)
 
 ### 7、selpg -s 10 -e 20 test.txt >out.txt 2>null
-7的输出结果是与6一样的
+7的输出结果是与6一样的。
+
 ![7](https://github.com/imhejiamin/selpg/blob/master/my_images/7.png)
 
 ### 8、selpg -s 10 -e 20 rest.txt >null
 屏幕标准输出错误信息，没有Output信息。
+
 ![8](https://github.com/imhejiamin/selpg/blob/master/my_images/8.png)
 
 ### 9、selpg -s 10 -e 20 test.txt | type test.txt
 一直把test.txt的文件显示完毕，最后还输出报错信息，报错信息来自于前一个命令。
+
 ![9](https://github.com/imhejiamin/selpg/blob/master/my_images/9.png)
 
 ![9-2](https://github.com/imhejiamin/selpg/blob/master/my_images/9-2.png)
@@ -138,13 +152,18 @@ $ selpg -s10 -e20 input_file > output_file 2>error_file &
 ![10](https://github.com/imhejiamin/selpg/blob/master/my_images/10.png)
 
 ![10-2](https://github.com/imhejiamin/selpg/blob/master/my_images/10-2.png)
+
 与9类似，但是，错误信息在error.txt里面了。
+
 ![10-3](https://github.com/imhejiamin/selpg/blob/master/my_images/10-3.png)
 
 ### 11、selpg -s 5 -e 10 -l 1 test.txt
 把页长度定义为1行，输出第5页到第10页。
+
 ![11](https://github.com/imhejiamin/selpg/blob/master/my_images/11.png)
 
 ### 12、selpg -s 10 -e 20 test.txt > out.txt 2>error.txt &
 实行了重定向输出并在后台挂起了程序。
+
 ![12](https://github.com/imhejiamin/selpg/blob/master/my_images/12.png)
+
