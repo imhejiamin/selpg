@@ -115,36 +115,36 @@ $ selpg -s10 -e20 input_file > output_file 2>error_file &
 
 ### 6、selpg -s 10 -e 20 test.txt >out.txt 2>error.txt
 两次重定向输出，屏幕无输出，out.txt没有内容，error.txt有存储错误信息。
-![6](https://github.com/imhejiamin/selpg/blob/master/my_images/6.png)
+![6](https://github.com/imhejiamin/selpg/blob/master/my_images/66.png)
 
 ![6-2](https://github.com/imhejiamin/selpg/blob/master/my_images/6-2.png)
 
-### 7、
-
+### 7、selpg -s 10 -e 20 test.txt >out.txt 2>null
+7的输出结果是与6一样的
 ![7](https://github.com/imhejiamin/selpg/blob/master/my_images/7.png)
 
-### 8、
-
+### 8、selpg -s 10 -e 20 rest.txt >null
+屏幕标准输出错误信息，没有Output信息。
 ![8](https://github.com/imhejiamin/selpg/blob/master/my_images/8.png)
 
-### 9、
-
+### 9、selpg -s 10 -e 20 test.txt | type test.txt
+一直把test.txt的文件显示完毕，最后还输出报错信息，报错信息来自于前一个命令。
 ![9](https://github.com/imhejiamin/selpg/blob/master/my_images/9.png)
 
 ![9-2](https://github.com/imhejiamin/selpg/blob/master/my_images/9-2.png)
 
-### 10、
+### 10、selpg -s 10 -e 20 test.txt 2>error.txt | type test.txt
 
 ![10](https://github.com/imhejiamin/selpg/blob/master/my_images/10.png)
 
 ![10-2](https://github.com/imhejiamin/selpg/blob/master/my_images/10-2.png)
-
+与9类似，但是，错误信息在error.txt里面了。
 ![10-3](https://github.com/imhejiamin/selpg/blob/master/my_images/10-3.png)
 
-### 11、
-
+### 11、selpg -s 5 -e 10 -l 1 test.txt
+把页长度定义为1行，输出第5页到第10页。
 ![11](https://github.com/imhejiamin/selpg/blob/master/my_images/11.png)
 
-### 12、
-
+### 12、selpg -s 10 -e 20 test.txt > out.txt 2>error.txt &
+实行了重定向输出并在后台挂起了程序。
 ![12](https://github.com/imhejiamin/selpg/blob/master/my_images/12.png)
